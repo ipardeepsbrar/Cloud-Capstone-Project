@@ -4,5 +4,9 @@
 
 {% block content %}
     <!--Add a dealer table here -->
-    Dealer table goes here
+    <div class="list-group"></div>
+    {% for dealer in dealerships %}
+        <a href="#" class="list-group-item list-group-item-action">{{dealer}}</a>
+    {% endfor %}
+    </div>
 {% endblock %}
