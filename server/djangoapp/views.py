@@ -112,9 +112,12 @@ def get_dealer_details(request):
         reviews = get_dealer_reviews_from_cf(url, dealerId)
         if type(reviews) is list:
             context['review_list'] = reviews
-            return HttpResponse('Reviews for this dealership are : %s' %context['review_list'])
+            print(context['review_list'][0].sentiment)
+            return HttpResponse('Reviews for this dealership are : %s' %context['review_list'][0].review)
+            # return HttpResponse('Reviews for this dealership are : %s' %context['review_list'])
         else:
             return HttpResponse('Error : ' + reviews)
+            # return HttpResponse(reviews)
     # return HttpResponse(reviews['body'])
 # ...
 # Create a `add_review` view to submit a review
