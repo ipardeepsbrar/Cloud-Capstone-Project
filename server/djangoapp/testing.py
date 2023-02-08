@@ -1,5 +1,5 @@
-def func(**kwargs):
-    print(kwargs['user'])
+# def func(**kwargs):
+#     print(kwargs['user'])
 
-dict = {'user':'pardeep'}
-func(user=dict)
+# dict = {'user':'pardeep'}
+# func(user=dict)
