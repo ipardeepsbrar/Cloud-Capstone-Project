@@ -19,8 +19,8 @@ class CarModel(models.Model):
     dealerId = models.IntegerField()
     type = models.CharField(max_length=40, choices=[('SED', 'Sedan'), ('SUV', 'SUV'), ('WAG', 'Wagon')])
     year = models.DateField()
-
     color = models.CharField(max_length=15)
+    
     def __str__(self):
         return 'Its a %s %s %s %s.' % (self.year, self.color, self.make.name, self.name)
 
