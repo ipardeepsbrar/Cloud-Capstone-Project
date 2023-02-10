@@ -24,7 +24,7 @@
                     {% if user.is_authenticated %}
                     <li>
                         <a class="btn btn-link" href="#">{{ user.first_name }}({{ user.username }})</a>
-                        <a class="btn btn-link" href="{% url 'djangoapp:add_review' %}">Add Review</a>
+                        <a class="btn btn-link" href="{% url 'djangoapp:add_review' dealer_id dealer_name %}">Add Review</a>
                         <a class="btn btn-link" href="{% url 'djangoapp:logout' %}">Logout</a>
                     </li>
                     {% else %}
@@ -44,19 +44,25 @@
             </div>
         </nav>
 
-         
+         <h3>Reviews for {{dealer_name}}</h3>
         <div class="card-columns">
-            {% for item in review_list %}
-                <div class="card">
-                    <img class="card-img-left" src="{{MEDIA_URL}}/emoji/{{item.sentiment}}.png">
-                    <div class="card-body">
-                        <h4 class="card-title">{{item.car_make}}</h4>
-                        <h4 class="card-title">{{item.car_model}}</h4>
-                        <h4 class="card-title">{{item.car_year}}</h4>
-                        <p class="card-text">{{item.review}}</p>
+            {% if review_list %}
+                {% for item in review_list %}
+                    <div class="card">
+                        <img class="card-img-left" src="{{MEDIA_URL}}/emoji/{{item.sentiment}}.png">
+                        <div class="card-body">
+                            <h4 class="card-title">{{item.car_make}}</h4>
+                            <h4 class="card-title">{{item.car_model}}</h4>
+                            <h4 class="card-title">{{item.car_year}}</h4>
+                            <p class="card-text">{{item.review}}</p>
+                        </div>
                     </div>
+                {% endfor %}
+            {% else %}
+                <div class="card">
+                    {{error}}
                 </div>
-            {% endfor %}
+            {% endif %}
         </div>
 
 
