@@ -1,4 +1,5 @@
 # Final Project Template
+![ice_screenshot_20230210-100729](https://user-images.githubusercontent.com/104244286/218125720-5588983c-77cb-4e40-b9da-cc047e583ea3.png)
 
 The final project for this course has several steps that you must complete. 
 To give you an overview of the whole project, all the high-level steps are listed below. 
